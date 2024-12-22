@@ -6,8 +6,8 @@ phases:
       java: corretto11
     commands:
       - echo "Installing dependencies"
-      - curl https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-6.2.1.4610-linux-x64.zip
-      - unzip sonar-scanner-cli-6.2.1.4610-linux-x64.zip -d /opt
+      - curl -o sonar-scanner-cli.zip https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-6.2.1.4610-linux-x64.zip
+      - unzip sonar-scanner-cli.zip -d /opt
       - export PATH="/opt/sonar-scanner-cli-6.2.1.4610-linux-x64/bin:$PATH"
   pre_build:
     commands:
