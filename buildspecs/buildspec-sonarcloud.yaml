@@ -19,11 +19,8 @@ phases:
   build:
     commands:
       - echo "Running SonarCloud scan"
-      - sonar-scanner \
-        -Dsonar.organization=duyluann \
-        -Dsonar.projectKey=duyluann_devsecops-aws-project \
-        -Dsonar.sources= ./app \
-        -Dsonar.host.url=https://sonarcloud.io
+      - sonar-scanner -Dsonar.organization=duyluann -Dsonar.projectKey=duyluann_devsecops-aws-project -Dsonar.sources=./app -Dsonar.host.url=https://sonarcloud.io
+
   post_build:
     commands:
       - echo "SonarCloud scan completed"
