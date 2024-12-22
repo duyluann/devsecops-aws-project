@@ -11,6 +11,7 @@ phases:
       - export PATH="/opt/sonar-scanner-4.8.0.2856/bin:$PATH"
   pre_build:
     commands:
+      - sonar-scanner -h
       - echo "Setting up environment for SonarCloud"
       - export SONAR_SCANNER_OPTS="-Xmx1024m"
       - export SONAR_TOKEN="2ff8f8e454292314970a1cea76e6aa81160cd46b"
