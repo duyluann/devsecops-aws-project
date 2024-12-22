@@ -6,9 +6,9 @@ phases:
       java: latest
     commands:
       - echo "Installing dependencies"
-      - curl -o sonar-scanner-cli.zip https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-6.2.1.4610-linux-x64.zip
-      - unzip sonar-scanner-cli.zip -d /opt
-      - export PATH="/opt/sonar-scanner-6.2.1.4610-linux-x64/bin/:$PATH"
+      - wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-6.2.1.4610-linux-x64.zip
+      - unzip ./sonar-scanner-cli-6.2.1.4610-linux-x64.zip
+      - export PATH=$PATH:/sonar-scanner-6.2.1.4610-linux-x64/bin/
   pre_build:
     commands:
       - sonar-scanner --help
