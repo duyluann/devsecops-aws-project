@@ -1,0 +1,36 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto11
+    commands:
+      - echo "Installing dependencies"
+      - curl -o sonar-scanner-cli.zip https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.8.0.2856.zip
+      - unzip sonar-scanner-cli.zip -d /opt
+      - export PATH="/opt/sonar-scanner-4.8.0.2856/bin:$PATH"
+  pre_build:
+    commands:
+      - echo "Setting up environment for SonarCloud"
+      - export SONAR_SCANNER_OPTS="-Xmx1024m"
+      - export SONAR_TOKEN="2ff8f8e454292314970a1cea76e6aa81160cd46b"
+      - export SONAR_HOST_URL="https://sonarcloud.io"
+  build:
+    commands:
+      - echo "Running SonarCloud scan"
+      - sonar-scanner \
+          -Dsonar.projectKey=your-project-key \
+          -Dsonar.organization=your-organization-name \
+          -Dsonar.sources=./src \
+          -Dsonar.java.binaries=./build \
+          -Dsonar.language=java \
+          -Dsonar.sourceEncoding=UTF-8 \
+          -Dsonar.login=$SONAR_TOKEN
+  post_build:
+    commands:
+      - echo "SonarCloud scan completed"
+
+artifacts:
+  files:
+    - "**/*"
+  base-directory: build
