@@ -11,7 +11,7 @@ phases:
       - export PATH="/opt/sonar-scanner-6.2.1.4610-linux-x64/bin/:$PATH"
   pre_build:
     commands:
-      - sonar-scanner -h
+      - sonar-scanner --help
       - echo "Setting up environment for SonarCloud"
       - export SONAR_SCANNER_OPTS="-Xmx1024m"
       - export SONAR_TOKEN="2ff8f8e454292314970a1cea76e6aa81160cd46b"
@@ -22,7 +22,7 @@ phases:
       - sonar-scanner \
         -Dsonar.organization=duyluann \
         -Dsonar.projectKey=duyluann_devsecops-aws-project \
-        -Dsonar.sources=. \
+        -Dsonar.sources= ./app \
         -Dsonar.host.url=https://sonarcloud.io
   post_build:
     commands:
