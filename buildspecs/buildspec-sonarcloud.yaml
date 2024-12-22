@@ -19,11 +19,9 @@ phases:
     commands:
       - echo "Running SonarCloud scan"
       - sonar-scanner \
-          -Dsonar.projectKey=your-project-key \
-          -Dsonar.organization=your-organization-name \
-          -Dsonar.sources=./src \
-          -Dsonar.java.binaries=./build \
-          -Dsonar.language=java \
+          -Dsonar.projectKey=duyluann_devsecops-aws-project \
+          -Dsonar.organization=duyluann \
+          -Dsonar.sources=. \
           -Dsonar.sourceEncoding=UTF-8 \
           -Dsonar.login=$SONAR_TOKEN
   post_build:
