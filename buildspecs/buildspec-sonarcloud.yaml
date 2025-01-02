@@ -1,0 +1,31 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: latest
+    commands:
+      - echo "Installing dependencies"
+      - wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-6.2.1.4610-linux-x64.zip
+      - unzip ./sonar-scanner-cli-6.2.1.4610-linux-x64.zip
+      - export PATH=$PATH:./sonar-scanner-6.2.1.4610-linux-x64/bin/
+  pre_build:
+    commands:
+      - sonar-scanner --help
+      - echo "Setting up environment for SonarCloud"
+      - export SONAR_SCANNER_OPTS="-Xmx1024m"
+      - export SONAR_TOKEN="2ff8f8e454292314970a1cea76e6aa81160cd46b"
+      - export SONAR_HOST_URL="https://sonarcloud.io"
+  build:
+    commands:
+      - echo "Running SonarCloud scan"
+      - sonar-scanner -Dsonar.organization=duyluann -Dsonar.projectKey=duyluann_devsecops-aws-project -Dsonar.sources=./app -Dsonar.host.url=https://sonarcloud.io
+
+  post_build:
+    commands:
+      - echo "SonarCloud scan completed"
+
+artifacts:
+  files:
+    - "**/*"
+  base-directory: build
