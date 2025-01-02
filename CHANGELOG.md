@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+# 1.0.0 (2025-01-02)
+
+
+### Features
+
+* devsecops ([ede80b2](https://github.com/duyluann/devsecops-aws-project/commit/ede80b25ab77de29d6c3309f0bd4cdcc76b1aa9e))
+
 # [1.5.0](https://github.com/duyluann/github-repo-template/compare/v1.4.0...v1.5.0) (2024-09-22)
 
 
