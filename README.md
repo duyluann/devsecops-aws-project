@@ -1,8 +1,8 @@
-# 🛠️ DevSecOps on AWS Project
+# 🛠️ DevSecOps@AWS Project
 
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=duyluann_devsecops-aws-project&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=duyluann_devsecops-aws-project)
 
-Welcome to the DevSecOps on AWS Project! This repository is a hands-on guide to implementing DevSecOps principles on AWS, inspired by the AWS Workshop: Security for Developers.
+Welcome to the DevSecOps@AWS Project! This repository is a hands-on guide to implementing DevSecOps principles on AWS, inspired by the AWS Workshop: Security for Developers.
 
 ## 🤝 Contributing
 
