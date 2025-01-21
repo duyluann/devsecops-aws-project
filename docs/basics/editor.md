@@ -35,4 +35,3 @@ Try searching for “Stepper”, for exampe, to insert the stepper block.
 Click or press Enter to insert your block. From here, you’ll be able to edit it as needed.
 {% endstep %}
 {% endstepper %}
-
